@@ -1,8 +1,8 @@
-board=[0,1,2,3,4,5,6,7,8]
+board=[1,2,3,4,5,6,7,8,9]
 i=0
 while true
 	puts "Player 1:"
-	move=gets.strip.to_i
+	move=gets.strip.to_i-1
 	if move<=8&&move>=0
 		if board[move]!='X'&&board[move]!='O'
 			board[move]='X'
@@ -51,7 +51,7 @@ while true
 		exit
 	end
 	puts "Player 2:"
-	move=gets.strip.to_i
+	move=gets.strip.to_i-1
 	if move<=9&&move>=1
 		if board[move]!='X'&&board[move]!='O'
 			board[move]='O'
