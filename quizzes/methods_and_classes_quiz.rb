@@ -48,7 +48,9 @@ class Person
   def initialize(age)
     @age = age
   end
-  attr_accessor :age
+  def age=string
+  	@age=string
+  end
   def age
   	return @age
   end
@@ -57,3 +59,14 @@ end
 bill=Person.new(54)
 bill.age=75
 puts bill.age #will put 75
+
+class Person_refactored
+  def initialize(age)
+    @age = age
+  end
+  attr_accessor :age
+end
+
+bill=Person_refactored.new(34)
+bill.age=22
+puts bill.age #will put 22
