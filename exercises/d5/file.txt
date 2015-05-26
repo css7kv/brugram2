@@ -2,3 +2,4 @@ Hello, this is awesome.
 
 Going to get a better headshot.
 
+['X_Full','X_Full','X_Full',4,5,6,7,8,9]&&board!=[1,2,3,'X_Full','X_Full','X_Full',7,8,9]&&board!=[1,2,3,4,5,6,'X_Full','X_Full','X_Full']&&board!=['X_Full',2,3,'X_Full',5,6,'X_Full',8,9]&&board!=[1,'X_Full',3,4,'X_Full',6,7,'X_Full',9]&&board!=[1,2,'X_Full',4,5,'X_Full',7,8,'X_Full']&&board!=['X_Full',2,3,4,'X_Full',6,7,8,'X_Full']&&board!=[1,2,'X_Full',4,'X_Full',6,'X_Full',8,9]
