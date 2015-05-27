@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Place.delete_all
+Place.create! name: "Lion's Head", description: "Really tall and awesome."
+Place.create! name: "Table Mountain", description: "Even taller and more cool."
