@@ -1,4 +1,11 @@
+<div align='center'><h1>Here are all the coolest places in Cape Town:</h1><br>
+<%= link_to 'Add a New Place', new_place_path %></div>
 <%@places.each do |place|%>
-	<div align='center'><strong><h2><%=place.name%></div></strong></h2>
-	<div align='center'><p><%=place.description%></div></p>
+	<div align='center'><strong>
+	<h2><%= link_to place.name, place_path(place.id) %></div></strong></h2>
+	<p><div align='center'><%=place.description%></p>
+	<p><%=place.address%></p>
+	<%= link_to 'Edit', edit_place_path(place) %>
+	<%= button_to "delete", place, :method => :delete %>
+              </div>
 <%end%>
