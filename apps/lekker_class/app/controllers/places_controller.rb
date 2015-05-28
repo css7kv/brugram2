@@ -1,6 +1,6 @@
 class PlacesController < ActionController::Base
 	def index
-		@places = Place.all.order(:name)
+		@places = Place.all.order(:vote).reverse_order
 	end
 	def destroy
     	@place = Place.find(params[:id])
@@ -17,8 +17,11 @@ class PlacesController < ActionController::Base
 	def create
 		@place = Place.new(place_params)
 
-		@place.save
-		redirect_to @place
+		if @place.save
+			redirect_to @place
+		else
+			render :new
+		end
 	end
 	def update
 	@place = Place.find(params[:id])
@@ -32,8 +35,14 @@ class PlacesController < ActionController::Base
 	def edit
     	@place =Place.find(params[:id])
   	end
+  	def upvote
+  		@place = Place.find(params[:id])
+  		@place.increment!(:vote, by = 1)
+  		redirect_to(places_path)
+	end
 	
+	private
    	def place_params
-		params.require(:place).permit(:name, :description, :address)
+		params.require(:place).permit(:name, :description, :address, :image)
 	end
 end

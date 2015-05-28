@@ -1,11 +1,17 @@
 <div align='center'><h1>Here are all the coolest places in Cape Town:</h1><br>
 <%= link_to 'Add a New Place', new_place_path %></div>
 <%@places.each do |place|%>
-	<div align='center'><strong>
-	<h2><%= link_to place.name, place_path(place.id) %></div></strong></h2>
-	<p><div align='center'><%=place.description%></p>
+	<strong><div align='center'>
+	<h2><%= link_to place.name, place_path(place.id) %></strong></h2>
+	<p><%=place.description%></p>
 	<p><%=place.address%></p>
-	<%= link_to 'Edit', edit_place_path(place) %>
-	<%= button_to "delete", place, :method => :delete %>
-              </div>
-<%end%>
+	<p><%= pluralize(place.vote, "vote") %></p>
+    <p><%= button_to '+1', upvote_place_path(place), method: :post %></p>
+	<%= button_to 'Edit', edit_place_path(place), :method => :get %>
+	
+
+	<%= button_to "Delete", place, :method => :delete, data: {confirm: "Are you sure bru?"} %>
+            
+
+	
+  </div><%end%>
