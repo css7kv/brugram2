@@ -1,4 +1,7 @@
-
-<%@hashtag.photos.each do |pic|%>
-	<%=image_tag pic.image.url(:thumb)%>
+<div align='center'><br><br><%@hashtag.photos.each do |pic|%>
+	<container><%= pic.caption %></container><br><br>
+	<%=image_tag pic.image.url(:thumb)%><br><br><br>
 <%end%>
+
+<br><%= link_to 'Go to All Hashtags', hashtags_path %><br>
+<%= link_to 'Go to the Full Library', photos_path %></div>

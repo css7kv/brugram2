@@ -1,7 +1,13 @@
+<body>
+<div align='center'><h1>Welcome to BruGram!</h1>
+<container>Would you like to...<br>
 <%= link_to "Add a new photo", new_photo_path %><br>
-<%= link_to "See all hashtags", hashtags_path %><br>
+<%= link_to "Check out the hashtags", hashtags_path %><br>
+or check out our library below:</container></div>
 
 <% @photos.each do |f|%>
 	<div align='center'><p><%= link_to image_tag(f.image.url(:medium)), photo_path(f) %></p>
+	<p><%= f.caption %></p>
 </div>
 <%end%>
+</body

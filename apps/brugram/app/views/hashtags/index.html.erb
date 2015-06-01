@@ -1,3 +1,5 @@
+<container>Here's a list of our hashtags!</container>
+<p>Click on one to see all the photos with that hashtag or click <%= link_to 'here', photos_path %> to go back to the Full Library</p>
 <% @hashtags.each do |tag| %>
 	<%=link_to tag.text, hashtag_path(tag)%><br>
 <%end%>

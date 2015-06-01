@@ -1,5 +1,6 @@
+<div align='center'>
+<container><%= @photo.caption %></container><br>
 <%= image_tag @photo.image.url(:thumb)%><br>
-<%= @photo.caption %><br>
 <% @photo.hashtags.each do |tag| %>
 	<%=link_to tag.text, hashtag_path(tag)%>
 <%end%>
@@ -7,3 +8,4 @@
 <%= button_to 'Edit', edit_photo_path(@photo), :method => :get %><br>
 <%= button_to "Delete", @photo, :method => :delete, data: {confirm: "Are you sure bru?"} %><br>
 <%= link_to "Back to home", photos_path %>
+</div>
